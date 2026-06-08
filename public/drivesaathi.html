@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DriveSaathi - One Page Website</title>
+  <style>
+    html{
+  font-size:16px;
+}
+
+@media(max-width:1200px){
+  html{font-size:15px;}
+}
+
+@media(max-width:992px){
+  html{font-size:14px;}
+}
+
+@media(max-width:768px){
+  html{font-size:13px;}
+}
+
+@media(max-width:480px){
+  html{font-size:12px;}
+}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body{
+      background:#f7f9ff;
+      color:#222;
+    }
+
+    .whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #02f55b;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.whatsapp-btn img {
+  width: 35px;
+  height: 35px;
+}
+
+    /* Navbar */
+    
+    header{
+      background:white;
+      padding:15px 40px;
+      display:flex;
+      align-items:center;
+      box-shadow:0px 4px 12px rgba(0,0,0,0.08);
+      position:sticky;
+      top:0;
+      z-index:999;
+      gap: 10px;
+    }
+
+    .logo{
+      font-size:22px;
+      font-weight:bold;
+      color:#070a07;
+      display:flex;
+      align-items:center;
+      gap:8px;
+       flex-shrink:0;
+    }
+
+    .logo img{
+  height:45px;
+  width:auto;
+}
+
+nav{
+  margin-left:auto;
+}
+
+
+     
+    nav ul{
+         
+      display:flex;
+      gap:18px;
+      list-style:none;
+      align-items:center;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:#111;
+      font-weight:600;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    nav ul li a:hover{
+      color:#1d4ed8;
+    }
+
+    /* Buttons */
+
+    .bnt{
+  padding:10px 18px;
+  border:none;
+  border-radius:10px;
+  background:#1d4ed8;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.bnt:hover{
+  transform:translateY(-3px);
+  background:#0f3bb3;
+}
+
+    .btn{
+      padding:10px 18px;
+      border:none;
+      border-radius:10px;
+      background:#1d4ed8;
+      color:white;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:600;
+      text-decoration:none;
+      display:inline-block;
+      text-align:center ;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      background:#0f3bb3;
+    }
+
+    .btn-outline{
+      background:transparent;
+      border:2px solid #1d4ed8;
+      color:#1d4ed8;
+    }
+
+    .btn-outline:hover{
+      background:#1d4ed8;
+      color:white;
+    }
+
+    /* Mobile Menu Button */
+    .menu-btn{
+      display:none;
+      margin-left:auto;
+      font-size:26px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    /* Hero */
+
+    .hero-image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-image img{
+  width: 100%;
+  max-width: 400px;
+}
+
+.bnt{
+  margin-top: 20px;
+}
+
+    .hero{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:60px 8%;   
+      
+    }
+
+   .hero-text{
+     flex:1;
+     }
+
+    .hero-text h1{
+      font-size:44px;
+      margin-bottom:15px;
+      line-height:1.2;
+    }
+
+    .hero-text p{
+      font-size:16px;
+      margin-bottom:20px;
+      color:#444;
+    }
+
+    
+  .hero-image{
+    flex:1;
+    text-align:center;
+   }
+
+    .hero-image img{
+      width:100%;
+      max-width:500px;
+      height:auto;
+      border-radius:18px;
+      box-shadow:0px 12px 25px rgba(0,0,0,0.15);
+    }
+
+    /* Sections */
+    .section{
+  padding:60px 8%;
+}
+
+
+    .section h2{
+      text-align:center;
+      font-size:32px;
+      margin-bottom:35px;
+    }
+
+    /* Cards */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      gap:22px;
+    }
+
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:18px;
+      box-shadow:0px 8px 18px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      color:#1d4ed8;
+    }
+
+    /* Contact */
+    .contact-box{
+      max-width:600px;
+      margin:auto;
+      background:white;
+      padding:30px;
+      border-radius:18px;
+      box-shadow:0px 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .contact-box input, .contact-box textarea{
+      width:100%;
+      padding:12px;
+      margin-bottom:15px;
+      border-radius:10px;
+      border:1px solid #ccc;
+      outline:none;
+    }
+
+    .contact-box input:focus, .contact-box textarea:focus{
+      border-color:#1d4ed8;
+    }
+
+    /* Footer */
+    footer{
+  background:#0b1220;
+  color:white;
+  padding:40px 8% 15px;  /* replace 40px 40px */
+}
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap:25px;
+      margin-bottom:20px;
+    }
+
+    .footer-title{
+      font-size:16px;
+      margin-bottom:12px;
+      font-weight:800;
+    }
+
+    .footer-text{
+      color:#cbd5e1;
+      line-height:1.6;
+      font-size:14px;
+    }
+
+    .footer-links{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .footer-links a{
+      text-decoration:none;
+      color:#cbd5e1;
+      transition:0.3s;
+      font-size:14px;
+    }
+
+    .footer-links a:hover{
+      color:white;
+    }
+
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.12);
+      padding-top:15px;
+      text-align:center;
+      color:#cbd5e1;
+      font-size:13px;
+    }
+
+    /* Animations */
+    .fade-in{
+      opacity:0;
+      transform:translateY(30px);
+      transition:0.8s ease;
+    }
+
+    .fade-in.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Dashboard */
+    .dashboard{
+      max-width:900px;
+      margin: 0 auto;
+      background:white;
+      padding:25px;
+      border-radius:18px;
+      box-shadow:0px 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .dash-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:15px;
+      margin-bottom:15px;
+    }
+
+    .dash-top h3{
+      font-size:20px;
+      color:#111;
+    }
+
+    .dash-top span{
+      color:#1d4ed8;
+      font-weight:800;
+    }
+
+    .hidden{
+      display:none;
+    }
+
+/* Responsive */
+@media(max-width:900px){
+.menu-btn{
+  display:block;
+  margin-left:auto;  /* ADD */
+}
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:40px 6%;   /* ✅ ADD THIS */
+  }
+
+  .hero-text,.hero-image{
+    width:100%;
+  }
+
+  /* ✅ ADD THIS PART */
+  .hero-text h1{
+    font-size:2rem;
+  }
+
+  .hero-text p{
+    font-size:0.95rem;
+  }
+
+  .hero-image img{
+    max-width:350px;
+  }
+  /* ✅ END */
+
+  header{
+    padding:12px 16px;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  nav{
+    width:100%;
+     margin-left:0;
+  }
+
+  nav ul{
+    display:none;
+    flex-direction:column;
+    gap:14px;
+    padding:15px 0;
+    align-items:center;
+  }
+
+  
+
+  nav ul.active{
+    display:flex;
+  }
+
+
+  .booking-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  
+}
+
+@media(max-width:992px){
+
+     .hero{
+    gap:40px;
+  }
+
+  .footer-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .footer-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
+
+
+@media(max-width:600px){
+
+  .hero-text h1{
+    font-size:1.6rem;
+  }
+
+  
+  .hero-image img{
+    max-width:280px;
+    box-shadow:0px 6px 12px rgba(0,0,0,0.1);  /* ✅ ADD THIS */
+  }
+
+}
+
+@media(max-width:600px){
+
+  .hero{
+    gap:20px;
+  }
+
+  .btn{
+    padding:8px 16px;
+    font-size:0.9rem;
+  }
+
+  .section h2{
+    font-size:1.6rem;
+  }
+}
+
+img{
+  max-width:100%;
+  height:auto;
+}
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- Navbar -->
+<header>
+  <div class="logo">
+          <img src="https://res.cloudinary.com/dzdaqmldh/image/upload/f_auto,q_auto/logo_zrqykw" alt="DriveSaathi logo" /> DriveSaathi
+  </div>
+
+  <nav>
+    <ul id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <a href="https://tri-view-flow-ilwz.vercel.app/" class="btn btn-outline">Let's Book</a>
+    </ul>
+  </nav>
+
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</header>
+
+  <!-- Home -->
+  <section class="hero" id="home">
+    <div class="hero-text fade-in">
+    <h1>Your Trusted Driving Partner<i class="fa-solid fa-car" style="font-size:40px; color:#090c13;"></i></h1>
+     
+
+      <p>
+        DriveSaathi provides professional drivers, safe rides, and easy booking.
+        Fast, reliable and affordable service for every trip.
+      </p>
+      <a href="#services" class="btn">Explore Services</a>
+    </div>
+
+    <div class="hero-image fade-in">
+      <img src="https://res.cloudinary.com/dzdaqmldh/image/upload/f_auto,q_auto/drive_skzwpb" alt="Car" />
+      <a href="https://drive.google.com/file/d/1hGxaL7vgjEhuuTOC_rEW8sc0REfUsq4n/view?usp=drivesdk" class="bnt">Download App</a>
+    </div>
+     
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <h2 class="fade-in">Our Services</h2>
+    <div class="cards">
+      <div class="card fade-in">
+        <h3>Professional Drivers</h3>
+        <p>Experienced drivers for your car, safe and trusted service.</p>
+      </div>
+      <div class="card fade-in">
+        <h3>Outstation Trips</h3>
+        <p>Long rides, family trips, and tours made easy with drivers.</p>
+      </div>
+      <div class="card fade-in">
+        <h3>Hourly Booking</h3>
+        <p>Need a driver for few hours? Book quickly anytime.</p>
+      </div>
+      <div class="card fade-in">
+        <h3>24/7 Support</h3>
+        <p>Customer support available day and night for your help.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <h2 class="fade-in">About DriveSaathi</h2>
+    <div class="cards">
+      <div class="card fade-in">
+        <h3>Who We Are?</h3>
+        <p>
+          DriveSaathi is a platform that provides verified and professional drivers.
+          Our mission is to make every ride safe, comfortable, and affordable.
+        </p>
+      </div>
+
+      <div class="card fade-in">
+        <h3>Our Vision</h3>
+        <p>
+          We want to become India’s most trusted driving service for local and outstation rides.
+        </p>
+      </div>
+
+      <div class="card fade-in">
+        <h3>Our Mission</h3>
+        <p>
+          Provide best driver service with safety, punctuality, and affordability.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Dashboard -->
+  <section class="section hidden" id="dashboardSection">
+    <h2 class="fade-in">User Dashboard</h2>
+
+    <div class="dashboard fade-in">
+      <div class="dash-top">
+        <h3>Welcome, <span id="dashName">User</span> 👋</h3>
+        <button class="btn btn-outline" onclick="logoutUser()">Logout</button>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Your Bookings</h3>
+          <p id="bookingHistory">No booking yet.</p>
+        </div>
+
+        <div class="card">
+          <h3>Account Info</h3>
+          <p id="accountInfo">Not available</p>
+        </div>
+
+        <div class="card">
+          <h3>Support</h3>
+          <p>Need help? Contact us anytime from the Contact section.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+<section class="section" id="contact">
+  <h2 class="fade-in">Contact Us</h2>
+   <h2 class="fade-in">Call:-8839698479</h2>
+
+
+  <div class="contact-box fade-in">
+    <form action="https://formspree.io/f/xvzbrwyl" method="POST">
+      
+      <input type="text" name="name" placeholder="Your Name" required />
+      
+      <input type="email" name="email" placeholder="Your Email" required />
+      
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+      <input type="hidden" name="_next" value="https://yourwebsite.com/#contact">
+
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-title">DriveSaathi</div>
+        <p class="footer-text">
+          DriveSaathi is a trusted platform for professional drivers.
+          Book drivers easily for local, outstation, and hourly rides.
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Professional Drivers</a></li>
+          <li><a href="#services">Outstation Trips</a></li>
+          <li><a href="#services">Hourly Booking</a></li>
+          <li><a href="#booking">Book Now</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><i class="fa-sharp fa-solid fa-house"></i><a href="#home">Home</a></li>
+          <li><i class="fa-solid fa-circle-info"></i><a href="#about">About</a></li>
+           <li><i class="fa-solid fa-taxi"></i><a href="#services">Services</a></li>
+          <li><i class="fa-solid fa-address-book"></i><a href="#contact">Contact</a></li>
+          
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">Social Media</div>
+        <ul class="footer-links">
+          <li><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/drivesaathi?igsh=cWdzd2M4ZXUxN3Jr" target="_blank">Instagram</a></li>
+          <li><i class="fa-brands fa-facebook"></i><a href="https://www.facebook.com/share/18CWxawfMr/?mibextid=wwXIfr" target="_blank">Facebook</a></li>
+          <li><i class="fa-brands fa-youtube"></i><a href="https://www.youtube.com/@DriveSaathi" target="_blank">YouTube</a></li>
+          <li><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/drivesaathi/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 DriveSaathi | All Rights Reserved
+    </div>
+  </footer>
+
+
+  <script>
+    // ==========================
+    // Scroll Animations
+    // ==========================
+    const elements = document.querySelectorAll(".fade-in");
+
+    function runAnimations(){
+      elements.forEach((el) => {
+        const pos = el.getBoundingClientRect().top;
+        const screen = window.innerHeight;
+        if (pos < screen - 80) {
+          el.classList.add("show");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", runAnimations);
+    window.onload = runAnimations;
+
+    // ==========================
+    // Mobile Navbar
+    // ==========================
+    function toggleMenu(){
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    function closeMenu(){
+      document.getElementById("navLinks").classList.remove("active");
+    }
+
+    // ==========================
+    // Modal Functions
+    // ==========================
+    function openLogin() {
+      document.getElementById("loginModal").style.display = "flex";
+      closeMenu();
+    }
+
+    function openSignup() {
+      document.getElementById("signupModal").style.display = "flex";
+      closeMenu();
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    function switchToSignup() {
+      closeModal("loginModal");
+      openSignup();
+    }
+
+    function switchToLogin() {
+      closeModal("signupModal");
+      openLogin();
+    }
+
+    // Close modal on outside click
+    window.onclick = function(event) {
+      if(event.target.classList.contains("modal")){
+        event.target.style.display = "none";
+      }
+    }
+ 
+
+    // ==========================
+    // Load saved data
+    // ==========================
+    window.addEventListener("load", () => {
+      showDashboard();
+
+      let booking = localStorage.getItem("drivesaathi_booking");
+      if(booking){
+        document.getElementById("bookingHistory").innerHTML = booking;
+      }
+    });
+    
+  </script>
+<script src="https://kit.fontawesome.com/897382787d.js" crossorigin="anonymous"></script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/918839698479?text=Hello%20I%20want%20to%20book%20a%20driver" target="_blank" class="whatsapp-btn">
+  <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" alt="WhatsApp">
+</a>
+</body>
+</html>
